@@ -23,7 +23,6 @@ const getUserCount = (req, res) => {
 const postUser = async (req, res) => {
     let user = new User(req.body);
     let count = await User.count();
-    console.log(count)
     user._id = count+1;
     try {
         user.save(function (err, user) {
